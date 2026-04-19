@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# tmux cheat sheet — based on your custom config (prefix = Ctrl+a)
+# Install: chmod +x ~/.local/bin/tmux-cheat && add ~/.local/bin to PATH
+# Usage:   tmux-cheat
+
+bold=$'\033[1m'
+dim=$'\033[2m'
+cyan=$'\033[36m'
+yellow=$'\033[33m'
+green=$'\033[32m'
+magenta=$'\033[35m'
+blue=$'\033[34m'
+red=$'\033[31m'
+reset=$'\033[0m'
+
+cat <<EOF
+
+${bold}${cyan}══════════════════════════════════════════════════════════${reset}
+${bold}  TMUX CHEAT SHEET ${dim}(prefix = Ctrl+a)${reset}
+${bold}${cyan}══════════════════════════════════════════════════════════${reset}
+
+${bold}${yellow}OUTSIDE TMUX ${dim}(from a normal shell)${reset}
+  tmux                          Start new unnamed session
+  tmux new -s ${dim}<n>${reset}            Start new named session
+  tmux ls                       List all sessions
+  tmux a -t ${dim}<n>${reset}              Attach to a session
+  tmux kill-session -t ${dim}<n>${reset}   Kill a session
+  tmux kill-server              Kill everything
+
+${bold}${green}SESSION COMMANDS ${dim}(inside tmux)${reset}
+  prefix + d                    Detach from session
+  prefix + \$                    Rename current session
+  prefix + N                    Create new named session
+  prefix + s                    Session picker
+  prefix + w                    Full tree picker (sessions + windows)
+  prefix + S                    Fuzzy search sessions (fzf)
+  prefix + \`                    Toggle last session
+
+${bold}${magenta}WINDOWS ${dim}(tabs)${reset}
+  prefix + c                    Create new window
+  prefix + ,                    Rename current window
+  prefix + &                    Kill current window
+  prefix + n / p                Next / previous window
+  prefix + ${dim}<number>${reset}              Jump to window by number
+  Shift+Alt+Left/Right          Cycle windows (no prefix)
+  prefix + Space                Toggle last window
+  prefix + W                    Fuzzy search windows (fzf)
+  prefix + < / >                Swap window position left/right
+
+${bold}${blue}PANES ${dim}(splits)${reset}
+  prefix + |                    Split vertical (left/right)
+  prefix + -                    Split horizontal (top/bottom)
+  prefix + x                    Kill current pane
+  prefix + z                    Zoom pane (toggle fullscreen)
+  prefix + Tab                  Toggle last pane
+  prefix + b                    Break pane into its own window
+  prefix + {  /  }              Swap pane position
+  prefix + Space-bar            Cycle pane layouts
+
+${bold}${blue}  navigating panes${reset}
+  Alt+Arrow keys                Switch panes (no prefix)
+  prefix + h/j/k/l              Switch panes (vim-style)
+
+${bold}${blue}  resizing panes${reset}
+  Shift+Arrow keys              Resize by 1-2 cells (no prefix)
+  prefix + H/J/K/L              Resize by 5 cells
+
+${bold}${red}COPY MODE ${dim}(scrolling & copying)${reset}
+  prefix + [                    Enter copy mode
+  q                             Exit copy mode
+  v                             Start selection
+  y                             Copy to clipboard (pbcopy)
+
+${bold}${cyan}OTHER${reset}
+  prefix + r                    Reload config
+  prefix + :                    Open tmux command prompt
+
+${bold}${cyan}══════════════════════════════════════════════════════════${reset}
+
+EOF
