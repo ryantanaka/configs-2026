@@ -1,0 +1,50 @@
+// Place your key bindings in this file to override the defaults
+[
+  // Splits
+  {
+    "key": "ctrl+shift+\\",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.splitEditorDown"
+  },
+
+  // Pane focus (hjkl)
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.focusRightGroup"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+
+  // Sidebar
+  {
+    "key": "cmd+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "cmd+f",
+    "command": "workbench.action.findInFiles"
+  },
+
+  // Tab cycling
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditorInGroup"
+  }
+]
